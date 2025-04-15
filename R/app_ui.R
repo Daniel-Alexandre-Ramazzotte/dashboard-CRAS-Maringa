@@ -120,7 +120,7 @@ app_ui <- dashboardPage(
             collapsible = FALSE,
             title = userDescription(
               title = "Daniel Alexandre Ramazzotte",
-              subtitle = "Developer",
+              subtitle = "Estatístico",
               image = "https://yt3.googleusercontent.com/kABO8qsiX0FKrvAsjdbU8q98mxSydtE4vpwu03omQ-WtRli9Lo1OTlDhjN05FNsUof2YhuHYvQ=s176-c-k-c0x00ffffff-no-rj",
               type = 1
             ),
@@ -128,11 +128,15 @@ app_ui <- dashboardPage(
             "Lindo gostoso"
           ),
           box(
-            title = "My favourite quote",
+            title = "Como Chico diria...",
             width = 6,
             collapsible = FALSE,
             blockQuote(
-              "Just because you're trash, doesn't mean you can't do great things. It's called garbage can, not garbage cannot.",
+              "O meu amor tem um jeito manso que é só seu
+E que me deixa louca quando me beija a boca
+A minha pele toda fica arrepiada
+E me beija com calma e fundo
+Até minh'alma se sentir beijada",
               color = "danger"
             )
           )
@@ -150,14 +154,14 @@ app_ui <- dashboardPage(
           sortable(
             width = 6,
             box(
-              title = "Unique Birds Found at each Location",
+              title = "GRAFICO",
               width = 12,
               status = "danger",
               collapsible = FALSE,
               ribbon(text = "NEW", color = "danger")
             ),
             box(
-              title = "Birds Sighted Per Day",
+              title = "GRAFICO",
               width = 12,
               closable = TRUE,
               status = "danger"
@@ -166,14 +170,14 @@ app_ui <- dashboardPage(
           sortable(
             width = 6,
             box(
-              title = "Bird Sightings by Location",
+              title = "GRAFICO",
               width = 12,
               status = "danger",
               collapsible = FALSE,
               maximizable = TRUE
             ),
             box(
-              title = "Total Sightings For Each Bird",
+              title = "GRAFICO",
               width = 12,
               status = "danger",
               collapsible = FALSE,
