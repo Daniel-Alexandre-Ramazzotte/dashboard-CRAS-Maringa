@@ -9,10 +9,16 @@ URL: https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa
 BugReports: 
     https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa/issues
 Imports: 
+    bs4Dash,
     config,
+    dplyr,
     DT,
+    fresh,
     golem,
     hunspell,
+    leaflet,
+    plotly,
+    readr,
     readxl,
     shinipsum,
     shiny,

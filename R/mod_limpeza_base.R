@@ -3,10 +3,12 @@ library(readxl)
 library(hunspell)
 library(stringi)
 
+# PROCURAR UMA PK
+
 # Pré-tratagem de dados no Excel anterior ao código seguinte
 
 # Importa a base
-dados <- read_excel("bases/CONT.CADUNICO.FAM.TOTAL..xlsx")
+dados <- read_excel("arquivos/bases/CONT.CADUNICO.FAM.TOTAL..xlsx")
 
 # Conserta os Na
 dados <- dados %>%
