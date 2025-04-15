@@ -1,21 +1,24 @@
-library(shiny)
-library(bs4Dash)
-library(dplyr)
-library(readr)
-library(plotly)
-library(leaflet)
-library(DT)
-library(fresh)
+#' The application User-Interface
+#'
+#' @param request Internal parameter for `{shiny}`.
+#'     DO NOT REMOVE.
+#' @import shiny
+#' @import bs4Dash
+#' @import plotly
+#' @import leaflet
+#' @import DT
+#' @noRd
 
-#plot_colour <- "#007bff"
-
-plot_colour <- "blue"
-
+plot_colour <- "#007bff"
 
 # User Interface ----------------------------------------------------------
 
 # UI do dashboard: Observações de Aves em Melbourne
-app_ui <- dashboardPage(
+app_ui <-
+
+  #golem_add_external_resources()
+
+  dashboardPage(
 
   # Título da aba do navegador
   title = "Dashboard CRAS Maringá",
@@ -226,4 +229,30 @@ Até minh'alma se sentir beijada",
     )
   )
 )
+
+#' Add external Resources to the Application
+#'
+#' This function is internally used to add external
+#' resources inside the Shiny application.
+#'
+#' @import shiny
+#' @importFrom golem add_resource_path activate_js favicon bundle_resources
+#' @noRd
+golem_add_external_resources <- function() {
+  add_resource_path(
+    "www",
+    app_sys("app/www")
+  )
+
+  tags$head(
+    favicon(),
+    bundle_resources(
+      path = app_sys("app/www"),
+      app_title = "et"
+    )
+    # Add here other external resources
+    # for example, you can add shinyalert::useShinyalert()
+  )
+}
+
 

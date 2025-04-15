@@ -5,9 +5,6 @@
 #' @import shiny
 #' @noRd
 app_server <- function(input, output, session) {
-  mod_random_plot_server("random_plot_1")
-  mod_random_plot_server("random_plot_1")
-  mod_random_plot_server("random_plot_1")
-  mod_random_plot_server("random_plot_1")
+
 }
 
