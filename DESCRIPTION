@@ -12,6 +12,7 @@ Imports:
     bs4Dash,
     config,
     DT,
+    fresh,
     golem,
     hunspell,
     leaflet,

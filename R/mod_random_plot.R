@@ -7,11 +7,12 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
+#' @import plotly
 mod_random_plot_ui <- function(id) {
   ns <- NS(id)
   tagList(
     h2("A Random Plot"),
-    plotOutput(ns("plot"))
+    plotlyOutput(ns("plot"))
   )
 }
 
@@ -20,12 +21,18 @@ mod_random_plot_ui <- function(id) {
 #' @noRd
 mod_random_plot_server <- function(id){
   moduleServer(id, function(input, output, session) {
-    ns <- session$ns
+    output$plot <- renderPlotly({
 
-    output$plot <- renderPlot({
-      shinipsum::random_ggplot()
+      df <- data.frame(
+        x = rnorm(100),
+        y = rnorm(100)
+      )
+
+      # Criando um gráfico com ggplot2
+      ggplot(df, aes(x = x, y = y)) +
+        geom_point() +
+        labs(title = "Gráfico Aleatório", x = "Eixo X", y = "Eixo Y")
     })
-
   })
 }
 

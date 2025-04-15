@@ -7,9 +7,17 @@
 #' @import plotly
 #' @import leaflet
 #' @import DT
+#' @import fresh
+#' @import ggplot2
 #' @noRd
 
 plot_colour <- "#007bff"
+
+fresh_theme <- create_theme(
+  bs4dash_status(
+    primary = "#E1EDED"
+  )
+)
 
 # User Interface ----------------------------------------------------------
 
@@ -17,6 +25,7 @@ plot_colour <- "#007bff"
 app_ui <- dashboardPage(
 
   golem_add_external_resources(),
+  freshTheme = fresh_theme,
   # Título da aba do navegador
   title = "Dashboard CRAS Maringá",
 
@@ -79,10 +88,10 @@ app_ui <- dashboardPage(
     sidebarMenu(
       id = "sidebarMenuid",
 
-      # Menu com duas abas: Home e Dashboard
+      # Menu
       menuItem("Home", tabName = "home", icon = icon("home")),
       menuItem("Dashboard", tabName = "dashboard", icon = icon("bar-chart")),
-      menuItem("Indicadores dos Territórios", tabName ="Indicadores dos Territórios", icon =icon("location-dot"))
+      menuItem("Indicadores dos Territórios", tabName ="territorios", icon =icon("location-dot"))
     )
   ),
 
@@ -150,6 +159,7 @@ Até minh'alma se sentir beijada",
           column(width = 4),
           column(width = 4)
         ),
+        # SORTABLE BOXES
         fluidRow(
           sortable(
             width = 6,
@@ -157,14 +167,17 @@ Até minh'alma se sentir beijada",
               title = "GRAFICO",
               width = 12,
               status = "danger",
-              collapsible = FALSE,
-              ribbon(text = "NEW", color = "danger")
+              collapsible = TRUE,
+              maximizable = TRUE,
+              mod_random_plot_ui("random_plot_1")
             ),
             box(
               title = "GRAFICO",
               width = 12,
-              closable = TRUE,
-              status = "danger"
+              collapsible = TRUE,
+              maximizable = TRUE,
+              status = "danger",
+              mod_random_plot_ui("random_plot_2")
             )
           ),
           sortable(
@@ -173,30 +186,17 @@ Até minh'alma se sentir beijada",
               title = "GRAFICO",
               width = 12,
               status = "danger",
-              collapsible = FALSE,
-              maximizable = TRUE
+              collapsible = TRUE,
+              maximizable = TRUE,
+              mod_random_plot_ui("random_plot_3")
             ),
             box(
               title = "GRAFICO",
               width = 12,
               status = "danger",
-              collapsible = FALSE,
-              label = boxLabel(
-                text = "Label",
-                status = "danger",
-                tooltip = "I'm a label!"
-              ),
-              sidebar = boxSidebar(
-                id = "boxsidebarid",
-                numericInput(
-                  inputId = "show_top_n",
-                  label = "Show Top N",
-                  value = 6,
-                  min = 1,
-                  max = 50,
-                  width = "97%"
-                )
-              )
+              collapsible = TRUE,
+              maximizable = TRUE,
+              mod_random_plot_ui("random_plot_4")
             )
           )
         ),
@@ -205,25 +205,56 @@ Até minh'alma se sentir beijada",
           width = 12,
           type = "tabs",
           status = "danger",
+          maximizable = TRUE,
           solidHeader = TRUE
         )
       ),
 
       tabItem(
-        tabName = "Indicadores dos Territórios",
+        tabName = "territorios",
+        ## Info boxes ----
         fluidRow(
-          box(
-            title = "Mapa ",
-            width = 12,
-            status = "success",
-            solidHeader = TRUE,
-            collapsible = TRUE,
-            leafletOutput("leaflet_mapa", height = "600px")
-          )
-        )
-      )
+          ## COLOCAR UM MAPA
 
+          column(
+            width = 4,
+            infoBox(
+              width = 12,
+              title = "Placeholder",
+              value = "Placeholder",
+              icon = icon("list"),
+              color = "primary"
+            )
+          ),
+
+          column(
+            width = 4,
+            infoBox(
+              width = 12,
+              value = "Placeholder",
+              title = "Species Identified",
+              icon = icon("dove"),
+              color = "primary"
+            )
+          ),
+
+          column(
+            width = 4,
+            infoBox(
+              width = 12,
+              value = "Placeholder",
+              title = "Placeholder",
+              icon = icon("location-dot"),
+              color = "primary"
+            )
+          )
+
+        )
+
+
+      )
     )
+
   )
 )
 
