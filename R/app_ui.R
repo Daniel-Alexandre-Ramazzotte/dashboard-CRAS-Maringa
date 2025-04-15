@@ -14,12 +14,9 @@ plot_colour <- "#007bff"
 # User Interface ----------------------------------------------------------
 
 # UI do dashboard: Observações de Aves em Melbourne
-app_ui <-
+app_ui <- dashboardPage(
 
-  #golem_add_external_resources()
-
-  dashboardPage(
-
+  golem_add_external_resources(),
   # Título da aba do navegador
   title = "Dashboard CRAS Maringá",
 
