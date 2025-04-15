@@ -6,7 +6,8 @@ Authors@R:
 Description: PKG_DESC.
 License: MIT + file LICENSE
 URL: https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa
-BugReports: https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa/issues
+BugReports: 
+    https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa/issues
 Imports: 
     bs4Dash,
     config,
