@@ -4,10 +4,9 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Daniel Alexandre", "Ramazzotte", , "ra132955@gmail.com", role = c("aut", "cre"))
 Description: PKG_DESC.
-License: What license is it under?
+License: MIT + file LICENSE
 URL: https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa
-BugReports: 
-    https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa/issues
+BugReports: https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa/issues
 Imports: 
     bs4Dash,
     config,
