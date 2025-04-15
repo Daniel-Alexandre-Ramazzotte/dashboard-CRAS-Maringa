@@ -11,6 +11,11 @@ Implementação do shiny com uma autenticação dos funcionários com a lib auth
 
 Implementação de uma página de inserção de dados (após definir como serão armazenados, bd ou arquivo de planilha) e consequente sistema hierárquico para permitir que apenas pessoas autorizadas alterem ou acrescentem dados
 
+REFS DE GOLEM:
+- https://rstudio.github.io/cheatsheets/golem.pdf
+- https://engineering-shiny.org/
+- https://golemverse.org/packages/
+
 ## Demandas
 
 POR TERRITÓRIO DE CRAS

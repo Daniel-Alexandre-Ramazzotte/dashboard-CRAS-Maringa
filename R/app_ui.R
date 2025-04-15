@@ -1,35 +1,32 @@
-#' The application User-Interface
-#'
-#' @param request Internal parameter for `{shiny}`.
-#'     DO NOT REMOVE.
-#' @import shiny
-#' @noRd
-app_ui <- function(request) {
-  tagList(
-    golem_add_external_resources(),
-    fluidPage(
-      golem::golem_welcome_page()
+app_ui <- bs4DashPage(
+  header = bs4DashNavbar(),
+  sidebar = bs4DashSidebar(
+    title = "Título",
+    bs4SidebarMenu(
+      bs4SidebarMenuItem(
+        "Dashboard",
+        tabName = "dashboard"
+      ),
+      bs4SidebarMenuItem(
+        "Mapa",
+        tabName = "mapa"
+      )
+    )
+  ),
+  body = bs4DashBody(
+    bs4TabItems(
+      bs4TabItem(
+        tabName = "dashboard",
+        fluidRow(
+          box(
+            mod_random_plot_ui("random_plot_1")
+          )
+        )
+      ),
+      bs4TabItem(
+        tabName = "mapa",
+        h3("Mapa aqui...")  # Placeholder caso queira usar depois
+      )
     )
   )
-}
-#' Add external Resources to the Application
-#'
-#' This function is internally used to add external
-#' resources inside the Shiny application.
-#'
-#' @import shiny
-#' @importFrom golem add_resource_path activate_js favicon bundle_resources
-#' @noRd
-golem_add_external_resources <- function() {
-  add_resource_path(
-    "www",
-    app_sys("app/www")
-  )
-  tags$head(
-    favicon(),
-    bundle_resources(
-      path = app_sys("app/www"),
-      app_title = "CRAS.Maringa.dashboard"
-    )
-  )
-}
+)

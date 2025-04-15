@@ -9,7 +9,7 @@
 #'
 #' @noRd
 app_sys <- function(...) {
-  system.file(..., package = "CRAS.Maringa.dashboard")
+  system.file(..., package = "dashboard.CRAS.Maringa")
 }
 #' Read App Config
 #'

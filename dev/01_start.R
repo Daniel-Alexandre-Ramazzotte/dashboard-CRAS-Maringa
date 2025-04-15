@@ -2,16 +2,16 @@
 #
 #
 golem::fill_desc(
-  pkg_name = "CRAS.Maringa.dashboard",
-  pkg_title = "PKG_TITLE",
+  pkg_name = "dashboard.CRAS.Maringa",
+  pkg_title = "Dashboard CRAS Maringá",
   pkg_description = "PKG_DESC.",
   authors = person(
-    given = "AUTHOR_FIRST",
-    family = "AUTHOR_LAST",
-    email = "AUTHOR@MAIL.COM",
+    given = "Daniel Alexandre",
+    family = "Ramazzotte",
+    email = "ra132955@gmail.com",
     role = c("aut", "cre")
   ),
-  repo_url = NULL,
+  repo_url = "https://github.com/Daniel-Alexandre-Ramazzotte/dashboard-CRAS-Maringa",
   pkg_version = "0.0.0.9000",
   set_options = TRUE
 )

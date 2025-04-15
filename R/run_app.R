@@ -7,6 +7,9 @@
 #' @export
 #' @importFrom shiny shinyApp
 #' @importFrom golem with_golem_options
+
+library(golem)
+library(shiny)
 run_app <- function(
   onStart = NULL,
   options = list(),
@@ -26,3 +29,5 @@ run_app <- function(
     golem_opts = list(...)
   )
 }
+
+run_app()
